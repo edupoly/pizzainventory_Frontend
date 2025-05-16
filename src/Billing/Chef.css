@@ -1,0 +1,126 @@
+
+.orders-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2rem 3rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+}
+
+.orders-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 2rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.order-card {
+  background-color: #f9faff;
+  border: 1.5px solid #dde3ea;
+  border-radius: 10px;
+  padding: 1.6rem 2rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.order-card p {
+  margin: 0.4rem 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.order-card p strong {
+  color: #555a66;
+  font-weight: 600;
+}
+
+.order-card ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  color: #4a4a4a;
+}
+
+.order-card ul li {
+  font-size: 0.96rem;
+  margin-bottom: 0.35rem;
+  transition: color 0.25s ease;
+}
+
+.order-card ul li:hover {
+  color: #007bff;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e3e7ef;
+  margin-top: 1.3rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.8rem !important;
+}
+
+button.btn-warning {
+  background-color: #f0ad4e;
+  border-color: #e0a234;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.48rem 1.3rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(240, 173, 78, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.btn-warning:hover,
+button.btn-warning:focus {
+  background-color: #d9961f;
+  border-color: #c98e1a;
+  box-shadow: 0 6px 15px rgba(217, 150, 31, 0.6);
+}
+
+button.btn-success {
+  background-color: #28a745;
+  border-color: #218838;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.48rem 1.3rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(40, 167, 69, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.btn-success:hover,
+button.btn-success:focus {
+  background-color: #1e7e34;
+  border-color: #19692c;
+  box-shadow: 0 6px 15px rgba(30, 126, 52, 0.6);
+}
+
+
+@media (max-width: 700px) {
+  .orders-container {
+    padding: 1.5rem 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .order-card {
+    padding: 1.2rem 1.3rem;
+  }
+
+  .orders-container h2 {
+    font-size: 1.6rem;
+  }
+}

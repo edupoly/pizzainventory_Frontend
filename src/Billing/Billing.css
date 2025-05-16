@@ -1,0 +1,134 @@
+
+.billing-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+
+.billing-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #f74141;
+  animation: slideInTop 0.5s ease-in-out;
+}
+
+.customer-name-field {
+  margin-bottom: 25px;
+}
+
+.customer-name-field label {
+  font-size: 1rem;
+  color: #3f3d3d;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.customer-name-field input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.customer-name-field input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+
+.billing-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  animation: fadeInUp 0.4s ease;
+}
+
+.billing-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #333;
+}
+
+.billing-item span {
+  transition: transform 0.2s ease;
+}
+
+.billing-item:hover span {
+  transform: scale(1.02);
+}
+
+.billing-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.pay-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pay-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.pay-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
