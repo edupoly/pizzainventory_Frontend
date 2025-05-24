@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
+import { useCart } from './CartContext';
 
 const Home = () => {
+    const { cart } = useCart();
   return (
     <div className="home">
       {/* <Navbar></Navbar> */}
@@ -14,8 +16,8 @@ const Home = () => {
           <Link to="/menu" className="btn btn-primary">Order Now</Link>
         </div>
       </section>
-
-      <section className="features container">
+      <div className="container">
+      <section className="features">
         <h2 className="section-title">Why Choose Us</h2>
         <div className="features-grid">
           <div className="feature-card">
@@ -36,7 +38,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="popular container">
+      <section className="popular">
         <h2 className="section-title">Popular Pizzas</h2>
         <div className="popular-grid">
           <div className="pizza-card">
@@ -68,6 +70,18 @@ const Home = () => {
           </div>
         </div>
       </section>
+      </div>
+      {cart.length >0 &&
+      <div className='d-flex d-lg-none' style={{position:"fixed",right:"50px",bottom:"50px"}}>
+        <Link to={'/cart'} className="btn btn-primary py-2 position-relative">
+          <i className="bi bi-cart4 text-light fs-4 lh-1"></i> <span className='fs-4 fw-bold'>Cart</span>
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+              {cart.length}
+              <span className="visually-hidden">unread messages</span>
+            </span>
+        </Link>
+      </div>
+}
     </div>
   );
 };

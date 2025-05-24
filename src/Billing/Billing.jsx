@@ -55,7 +55,7 @@ const Billing = () => {
 
   return (
     <div className="billing-container">
-      <h2>Billing Details</h2>
+      <h2 className='fw-bold'>Billing Details</h2>
 
       <div className="customer-name-field">
         <label htmlFor="customerName">Enter Your Name:</label>
@@ -76,9 +76,12 @@ const Billing = () => {
             const sizePrice = item.pizza.sizes.find(s => s.size === item.size).price;
             const itemTotal = (item.pizza.price + sizePrice) * item.quantity;
             return (
-              <li key={i} className="billing-item">
-                <span>{item.pizza.name} ({item.size}) × {item.quantity}</span>
-                <span>Rs{itemTotal.toFixed(2)}</span>
+              <li key={i} className="billing-item d-flex justify-content-between">
+                <div className='row w-100'>
+                  <p className='col-7 text-start p-0'>{item.pizza.name} ({item.size})</p>
+                  <p className='col-2 d-flex'>× {item.quantity}</p>
+                </div>
+                <div>₹{itemTotal.toFixed(2)}/-</div>
               </li>
             );
           })}
@@ -86,7 +89,7 @@ const Billing = () => {
       )}
 
       <div className="billing-total">
-        <h3>Total: Rs{totalPrice.toFixed(2)}</h3>
+        <h3>Total: ₹{totalPrice.toFixed(2)}/-</h3>
         <button
           className="pay-btn"
           onClick={handlePaymentConfirm}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { CartProvider } from './Components/CartContext';
-import { Routes, Route } from 'react-router-dom'; 
+import { CartProvider, useCart } from './Components/CartContext';
+import { Routes, Route, Link } from 'react-router-dom'; 
 import Navbar from './Components/Navbar';
 import Files from './Components/Files';
 import Menu from './Customers/Menu';
@@ -13,7 +13,7 @@ import Chef from './Billing/Chef';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App position-relative">
       
       <PaymentProvider>
       <CartProvider>
@@ -26,8 +26,10 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/Chef" element={<Chef />} />
         </Routes>
+        
       </CartProvider>
       </PaymentProvider>
+      
     </div>
   );
 }

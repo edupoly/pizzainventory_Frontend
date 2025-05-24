@@ -71,6 +71,11 @@
   color: #e63946;
 }
 
+.navbar-nav .nav-link.active {
+  color: #e63946;
+  font-weight: 600;
+}
+
 .pizzahub-navbar-actions {
   display: flex;
   align-items: center;

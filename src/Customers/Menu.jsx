@@ -4,9 +4,9 @@ import { useState } from 'react';
 import './Menu.css';
 import Navbar from '../Components/Navbar';
 import { useCart } from '../Components/CartContext';
+import { Link } from 'react-router-dom';
 const Menu = () => {
   const {cart, setCart} = useCart([]);
-  
  const pizzas  = [
     {
       _id: '1',
@@ -529,7 +529,7 @@ const Menu = () => {
       ]
     },
       {
-      _id: '24',
+      _id: '41',
       name: 'Vegan Supreme',
       description: 'Plant-based cheese, vegan sausage, and assorted vegetables',
       price: 13.99,
@@ -542,7 +542,7 @@ const Menu = () => {
       ]
     },
     {
-      _id: '25',
+      _id: '42',
       name: 'Chicken Tikka',
       description: 'Tandoori chicken, onions, and peppers with a spicy tikka sauce',
       price: 139,
@@ -576,7 +576,7 @@ const Menu = () => {
   return (
     <div className="menu-container">
  
-      <h1>Pizza Menu</h1>
+      <h1 className='fw-bold'>Pizza Menu</h1>
       <div className="pizza-list">
         {pizzas.map(pizza => (
           <div
@@ -604,6 +604,17 @@ const Menu = () => {
           </div>
         ))}
       </div>
+      {cart.length >0 &&
+      <div className='d-flex d-lg-none fixed-bottom mx-4 px-4 py-3 z-1' /* style={{position:"fixed",right:"50px",bottom:"50px"}} */>
+        <Link to={'/cart'} className="btn btn-primary py-2 position-relative w-100">
+          <i className="bi bi-cart4 text-light fs-4 lh-1"></i> <span className='fs-4 fw-bold'>Cart</span>
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+              {cart.length}
+              <span className="visually-hidden">unread messages</span>
+            </span>
+        </Link>
+      </div>
+}
     </div>
   );
 };
